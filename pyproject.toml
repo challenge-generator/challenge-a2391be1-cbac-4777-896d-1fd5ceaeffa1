@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "sensor_analytics"
+version = "0.1.0"
+description = "API para análisis de datos de sensores en DynamoDB"
+authors = ["Ingeniero de IA <ia@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "0.115.0"
+uvicorn = "0.30.1"
+boto3 = "1.34.123"
+pydantic = "2.8.2"
+python-dotenv = "1.0.1"
+pandas = "2.2.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "8.2.0"
+moto = "5.0.0"
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.8.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v"
